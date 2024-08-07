@@ -1,35 +1,24 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Impossible Quiz</title>
-              <link rel="icon" href="/images/logo/favi/logo-16x16.png" sizes="16x16">
-    <link rel="icon" href="/images/logo/favi/logo-32x32.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="/images/logo/favi/apple-touch-icon.png" sizes="180x180">
-          <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-20CSCVKLF3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-20CSCVKLF3');
-</script>
+<script src="/js/all.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>html{background-color:#000;}</style>
   </head>
-  <body style="margin: 0; padding: 0">
-    <div
-      id="container"
-      style="position: absolute; width: auto; height: auto; inset: 0"
-    ></div>
-    <script src="../ruffle/ruffle.js"></script>
+  <body style="margin: 0; overflow: hidden;">
+    <div id="ruffle" width="100vw" height="100vh"></div>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <script>
       window.RufflePlayer = window.RufflePlayer || {};
       window.addEventListener("load", (event) => {
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
-        const container = document.getElementById("container");
-        player.style.width = "100%";
-        player.style.height = "100%";
+        const container = document.getElementById("ruffle");
+        player.id = "player";
+        player.style.width = "100vw";
+        player.style.height = "100vh";
         container.appendChild(player);
         player.load("impossiblequiz.swf");
       });
