@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>html{background-color:#000;}</style>
   </head>
-  <body>
-    <div id="ruffle" width="100%" height="100%"></div>
+  <body style="margin: 0; overflow: hidden;">
+    <div id="ruffle" width="100vw" height="100vh"></div>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <script>
       window.RufflePlayer = window.RufflePlayer || {};
@@ -17,8 +17,8 @@
         const player = ruffle.createPlayer();
         const container = document.getElementById("ruffle");
         player.id = "player";
-        player.style.width = "100%";
-        player.style.height = "100%";
+        player.style.width = "100vw";
+        player.style.height = "100vh";
         container.appendChild(player);
         player.load("gold-miner-vegas-australia.swf");
       });
